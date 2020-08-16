@@ -14,7 +14,7 @@ global class FetchProductFromUUID {
         List<Contact> con = new List<Contact>();
         ErrorWrapper err = new ErrorWrapper();
         
-        con = [Select id from Contact where uuid__c =: uuid ];
+        con = [Select id from Contact where uuid__c =: uuid Limit 1];
         
         /*Check if Contact is mapped to UUID*/
         if(!con.isEmpty()){
